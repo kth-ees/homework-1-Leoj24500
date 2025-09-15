@@ -1,8 +1,10 @@
-module decoder (
-  input logic [3:0] binary,
-  output logic [15:0] one_hot
+module decoder(
+  input logic [2:0] AA,
+  output logic [15:0] II
 );
-  // …
-  // Add your description here
-  // …
-endmodule
+
+always_comb begin
+  II = '0;
+  II[AA] = 1;
+end
+endmodule 

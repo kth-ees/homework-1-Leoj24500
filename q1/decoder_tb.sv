@@ -1,14 +1,15 @@
-module decoder_tb;
+module TB_decoder;
+// Testbench signals
+    logic [3:0] decoder_address;
+    logic [15:0] decoder_output;
 
-  // Testbench signals
-  logic [3:0] binary;
-  logic [15:0] one_hot;
-
-  // Instantiate the decoder module
-  decoder uut (
-    .binary(binary),
-    .one_hot(one_hot)
-  );
-
-  // Complete your testbench here
+    decoder DUT2 (.AA(decoder_address), 
+            .II(decoder_output));
+    // Instantiate the decoder module
+    initial begin
+        for (int i = 0; i<16; i++) begin
+            decoder_address = i;
+            #10ns;
+        end
+    end
 endmodule
