@@ -1,5 +1,5 @@
 module decoder(
-  input logic [2:0] AA,
+  input logic [3:0] AA,
   output logic [15:0] II
 );
 
